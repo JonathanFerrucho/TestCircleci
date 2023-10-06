@@ -11,6 +11,8 @@ jobs:
             aws s3 cp s3://testcduartebucket/especificacion_delivery_pipeline.txt delivery_pipeline/especificacion_delivery_pipeline.txt 
       - run: ls -lha
       - run: ls -lha .circleci
+      - run: cat .circleci/delivery_pipeline/especificacion_delivery_pipeline.txt
+      - run: delivery_pipeline/especificacion_delivery_pipeline.txt
       - run: diff -r -q '.circleci/delivery_pipeline/especificacion_delivery_pipeline.txt' 'delivery_pipeline/especificacion_delivery_pipeline.txt'
           
 workflows:
