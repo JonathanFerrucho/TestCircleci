@@ -14,7 +14,7 @@ jobs:
           command: chmod +x delivery_pipeline/especificacion_delivery_pipeline.txt
       - run:
           name: Permission to especificacion_delivery_pipeline.txt local
-          command: chmod +x .circlec/delivery_pipeline/especificacion_delivery_pipeline.txt
+          command: chmod +x .circleci/delivery_pipeline/especificacion_delivery_pipeline.txt
       - run: ls -lha delivery_pipeline
       - run: ls -lha .circleci/delivery_pipeline
       - run: cat .circleci/delivery_pipeline/especificacion_delivery_pipeline.txt
