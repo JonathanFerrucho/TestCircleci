@@ -15,7 +15,7 @@ jobs:
       - run: ls -lha delivery_pipeline
       - run: ls -lha .circleci/delivery_pipeline
       - run: cat .circleci/delivery_pipeline/especificacion_delivery_pipeline.txt
-      - run: delivery_pipeline/especificacion_delivery_pipeline.txt
+      - run: cat delivery_pipeline/especificacion_delivery_pipeline.txt
       - run: diff -r -q '.circleci/delivery_pipeline/especificacion_delivery_pipeline.txt' 'delivery_pipeline/especificacion_delivery_pipeline.txt'
           
 workflows:
