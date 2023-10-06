@@ -14,7 +14,7 @@ commands:
           name: Obtener s3
           command: |
             aws s3 cp s3://testcduartebucket/especificacion_delivery_pipeline.txt
-            ls
+
 jobs:
   test_delivery_pipeline:
     steps:
