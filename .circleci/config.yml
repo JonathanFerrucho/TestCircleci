@@ -21,6 +21,9 @@ jobs:
     steps:
       - checkout
       - run: echo "this is the build job"
+  test_delivery_pipeline:
+    steps:
+      - obtener_s3  
 
 # Orchestrate our job run sequence
 workflows:
