@@ -18,9 +18,11 @@ jobs:
       - run: |
             DIFF=$(diff -w .circleci/delivery_pipeline/especificacion_delivery_pipeline.txt delivery_pipeline/especificacion_delivery_pipeline.txt) 
             if [ "$DIFF" != "" ] ; then
-              echo "Los archivos son iguales"
+              cat delivery_pipeline/especificacion_delivery_pipeline.txt
+              exit 0
             else
-             echo "Los archivos NO son iguales"
+             echo "Estas en la ultima version"
+             exit 0
             fi
           
 workflows:
