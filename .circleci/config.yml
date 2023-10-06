@@ -9,7 +9,7 @@ jobs:
       - aws-cli/setup
       - run: |
             aws s3 cp s3://testcduartebucket/especificacion_delivery_pipeline.txt . --recursive
-            ls
+            ls -lha
 workflows:
   aws-cli:
     jobs:
