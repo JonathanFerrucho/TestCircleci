@@ -22,3 +22,6 @@ workflows:
   aws-cli:
     jobs:
       - buscar_s3
+      - mostar_s3:
+        requires:
+        - buscar_s3
