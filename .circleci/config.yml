@@ -16,7 +16,8 @@ jobs:
           name: Permission to especificacion_delivery_pipeline.txt local
           command: chmod +x .circleci/delivery_pipeline/especificacion_delivery_pipeline.txt
       - run: |
-            if [[ diff -w .circleci/delivery_pipeline/especificacion_delivery_pipeline.txt delivery_pipeline/especificacion_delivery_pipeline.txt ]]; then
+            DIFF=$(diff -w .circleci/delivery_pipeline/especificacion_delivery_pipeline.txt delivery_pipeline/especificacion_delivery_pipeline.txt) 
+            if [ "$DIFF" != "" ] ; then
               echo "Los archivos son iguales"
             else
              echo "Los archivos NO son iguales"
