@@ -16,9 +16,7 @@ jobs:
           name: Permission to especificacion_delivery_pipeline.txt local
           command: chmod +x .circleci/delivery_pipeline/especificacion_delivery_pipeline.txt
       - run: |
-            DIFF=$(diff -w .circleci/delivery_pipeline/especificacion_delivery_pipeline.txt delivery_pipeline/especificacion_delivery_pipeline.txt) 
-            exit 0
-            if [ "$DIFF" != "" ] ; then
+            if [ diff -w .circleci/delivery_pipeline/especificacion_delivery_pipeline.txt delivery_pipeline/especificacion_delivery_pipeline.txt != "" ] ; then
               cat delivery_pipeline/especificacion_delivery_pipeline.txt
               exit 0
             else
