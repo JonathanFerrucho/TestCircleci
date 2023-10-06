@@ -8,10 +8,10 @@ jobs:
       - checkout
       - aws-cli/setup
       - run: |
-            aws s3 cp s3://testcduartebucket/especificacion_delivery_pipeline.txt especificacion_delivery_pipeline.txt 
+            aws s3 cp s3://testcduartebucket/especificacion_delivery_pipeline.txt delivery_pipeline/especificacion_delivery_pipeline 
       - run: ls -lha
       - run: ls -lha .circleci
-      - run: cat especificacion_delivery_pipeline.txt 
+      - run: diff -r -q '.circleci/delivery_pipeline/especificacion_delivery_pipeline' 'delivery_pipeline/especificacion_delivery_pipeline'
           
 workflows:
   aws-cli:
