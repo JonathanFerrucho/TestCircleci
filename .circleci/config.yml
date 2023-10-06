@@ -3,8 +3,6 @@ version: 2.1
 orbs:
   aws-cli: circleci/aws-cli@4.0.0
 
-
-
 commands:
   obtener_s3:
     steps:
@@ -21,6 +19,6 @@ jobs:
       - obtener_s3
 
 workflows:
-  Execution:
+  testDeliveryPipeline:
     jobs:
       - test_delivery_pipeline
