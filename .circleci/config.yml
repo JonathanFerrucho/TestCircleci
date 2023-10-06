@@ -19,7 +19,14 @@ jobs:
       - run: ls -lha .circleci/delivery_pipeline
       - run: cat .circleci/delivery_pipeline/especificacion_delivery_pipeline.txt
       - run: cat delivery_pipeline/especificacion_delivery_pipeline.txt
-      - run: diff -r -q '.circleci/delivery_pipeline/especificacion_delivery_pipeline.txt' 'delivery_pipeline/especificacion_delivery_pipeline.txt'
+      - run: |
+        if diff '.circleci/delivery_pipeline/especificacion_delivery_pipeline.txt' 'delivery_pipeline/especificacion_delivery_pipeline.txt';
+        then 
+          cat delivery_pipeline/especificacion_delivery_pipeline.txt
+          exit 0
+        else:
+          echo "Estas es la ultima version"
+          exit 0
           
 workflows:
   aws-cli:
