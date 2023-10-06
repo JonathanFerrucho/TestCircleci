@@ -1,0 +1,26 @@
+version: 2.1
+
+orbs:
+  aws-cli: circleci/aws-cli@4.0.0
+
+
+
+commands:
+  obtener_s3:
+    steps:
+      - checkout
+      - aws-cli/setup
+      - run:
+          name: Obtener s3
+          command: |
+            aws s3 cp s3://testcduartebucket/especificacion_delivery_pipeline.txt
+            ls
+jobs:
+  test_delivery_pipeline:
+    steps:
+      - obtener_s3
+
+workflows:
+  Execution:
+    jobs:
+      - test_delivery_pipeline
