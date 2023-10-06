@@ -2,13 +2,13 @@ version: '2.1'
 orbs:
   aws-cli: circleci/aws-cli@4.0
 jobs:
-  configure_role_arn:
+  buscar_s3:
     executor: aws-cli/default
     steps:
       - checkout
       - aws-cli/setup
       - run: |
-            aws s3 cp s3://testcduartebucket/especificacion_delivery_pipeline.txt . --recursive
+            aws s3 cp s3://testcduartebucket/especificacion_delivery_pipeline.txt especificacion_delivery_pipeline.txt 
             ls -lha
 workflows:
   aws-cli:
