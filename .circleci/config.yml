@@ -21,12 +21,6 @@ jobs:
       - run: cat delivery_pipeline/especificacion_delivery_pipeline.txt
       - run: |
             diff .circleci/delivery_pipeline/especificacion_delivery_pipeline.txt delivery_pipeline/especificacion_delivery_pipeline.txt
-            
-            if [ $? -eq 0 ]; then
-              echo "Los archivos son iguales"
-            else
-              echo "Los archivos son diferentes"
-            fi
           
 workflows:
   aws-cli:
