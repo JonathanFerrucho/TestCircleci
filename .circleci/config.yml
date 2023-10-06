@@ -15,12 +15,12 @@ jobs:
       - run:
           name: Permission to especificacion_delivery_pipeline.txt local
           command: chmod +x .circleci/delivery_pipeline/especificacion_delivery_pipeline.txt
-      - run: ls -lha delivery_pipeline
-      - run: ls -lha .circleci/delivery_pipeline
-      - run: cat .circleci/delivery_pipeline/especificacion_delivery_pipeline.txt
-      - run: cat delivery_pipeline/especificacion_delivery_pipeline.txt
       - run: |
             diff -w .circleci/delivery_pipeline/especificacion_delivery_pipeline.txt delivery_pipeline/especificacion_delivery_pipeline.txt
+            if 1 ==2 then
+            echo "Los archivos son iguales"
+            else:
+            echo "Los archivos NO son iguales"
           
 workflows:
   aws-cli:
