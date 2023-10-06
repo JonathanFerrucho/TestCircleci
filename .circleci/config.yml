@@ -17,10 +17,11 @@ jobs:
           command: chmod +x .circleci/delivery_pipeline/especificacion_delivery_pipeline.txt
       - run: |
             diff -w .circleci/delivery_pipeline/especificacion_delivery_pipeline.txt delivery_pipeline/especificacion_delivery_pipeline.txt
-            if 1 ==2 then
-            echo "Los archivos son iguales"
-            else:
-            echo "Los archivos NO son iguales"
+            if [[ 1 == 2 ]]; then
+              echo "Los archivos son iguales"
+            else
+             echo "Los archivos NO son iguales"
+            fi
           
 workflows:
   aws-cli:
