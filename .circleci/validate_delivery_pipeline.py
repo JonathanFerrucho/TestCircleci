@@ -22,7 +22,7 @@ def validate_delivery_pipeline():
 
 
 def get_metadata() -> Metadata:
-    event_file_name = "metadata/metadata.json"
+    event_file_name = ".circleci/metadata/metadata.json"
     with open(event_file_name, "r", encoding="UTF-8") as file_metadata:
         return Metadata(**json.load(file_metadata))
 
