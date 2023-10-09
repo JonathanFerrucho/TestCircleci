@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: Install Pip & Boto3
-          command: python3 -m pip install --upgrade pip setuptools wheel && pip install boto3 && pip install pydantic && pip install 
+          command: python3 -m pip install --upgrade pip setuptools wheel && pip install boto3 && pip install pydantic
       - run:
           command: |
             python .circleci/validate_delivery_pipeline.py
