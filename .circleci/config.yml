@@ -15,7 +15,7 @@ jobs:
           command: |
             python .circleci/validate_delivery_pipeline.py
             
-  test-orb-circleci
+  - test-orb-circleci
 
 
 workflows:
