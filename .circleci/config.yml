@@ -19,6 +19,6 @@ jobs:
 workflows:
   validate delivery pipeline:
     jobs:
-      - test-orb-circleci/greet:
+      - test-orb-circleci/hello:
           to: "Paramtro de entrada"
       - validate_delivery_pipeline
