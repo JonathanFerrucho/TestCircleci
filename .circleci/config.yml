@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  test-orb-circleci: namespace_jonnathan_test/test-orb-circleci@0.0.4
+  test-orb-circleci: namespace_jonnathan_test/test-orb-circleci@0.0.5
   
 jobs:
   validate_delivery_pipeline:
